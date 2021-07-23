@@ -9,15 +9,17 @@ import java.util.Date;
 @Getter
 @Setter
 public class DtoData {
-    String firstname;
-    String lastname;
-    String dateofbirth;
-    String gender;
-    String email;
-    String mobileno;
-    String address;
-    String city;
-    String state;
-    String country;
-    String pin;
+    private String firstname;
+    private String lastname;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Jakarta")
+    private Date dateofbirth;
+    private String gender;
+    private String email;
+    private String mobileno;
+    private String address;
+    private String city;
+    private String state;
+    private String country;
+    private String pin;
 }

@@ -9,15 +9,15 @@ import java.util.Date;
 @Getter
 @Setter
 public class DtoReqData {
-    String firstname;
-    String lastname;
-    String gender;
-    String email;
-    String dateofbirth;
-    String mobileno;
-    String address;
-    String city;
-    String state;
-    String country;
-    String pin;
+    private String firstname;
+    private String lastname;
+    private String gender;
+    private String email;
+    private String date;
+    private String mobileno;
+    private String address;
+    private String city;
+    private String state;
+    private String country;
+    private String pin;
 }

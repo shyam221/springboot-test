@@ -15,10 +15,10 @@ import java.text.ParseException;
 @RequestMapping("/api/data")
 public class DataController {
     @Autowired
-    DataService dataService;
+    private DataService dataService;
 
-    @GetMapping("")
-    ResponseEntity<DtoData> submitDataWithParams(@RequestParam("firstname") String firstname,
+    @PostMapping("")
+    public ResponseEntity<DtoData> submitDataWithParams(@RequestParam("firstname") String firstname,
                                       @RequestParam("lastname") String lastName,
                                       @RequestParam(name = "dateofbirth", required = false) String dateofbirth,
                                       @RequestParam("gender") String gender,
@@ -33,7 +33,7 @@ public class DataController {
         return ResponseEntity.status(HttpStatus.OK).body(data);
     }
     @PostMapping("/submit")
-    ResponseEntity<DtoData> submitWithBody(@RequestBody DtoReqData request) {
+    public ResponseEntity<DtoData> submitWithBody(@RequestBody DtoReqData request) throws ParseException {
         DtoData data = dataService.submitDataWithBody(request);
         return ResponseEntity.status(HttpStatus.OK).body(data);
     }
